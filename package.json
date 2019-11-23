@@ -18,8 +18,8 @@
     "clean": "rimraf dist",
     "start:html": "serve",
     "start": "yarn bundle -w",
-    "build": "yarn bundle",
-    "bundle": "microbundle --external none --sourcemap=false",
+    "build": "yarn bundle --sourcemap=false",
+    "bundle": "microbundle --external none",
     "prebundle": "yarn clean",
     "prepublishOnly": "yarn build"
   },

@@ -1,6 +1,6 @@
 import shouldInterceptClick from 'click-should-be-intercepted-for-navigation';
 
-function attachClickListener(cb) {
+function attachListener(cb) {
   const anchors = document.querySelectorAll('a');
   for (let i = 0; i < anchors.length; i++) {
     const anchor = anchors[i];
@@ -16,6 +16,15 @@ function attachClickListener(cb) {
       });
     }
   }
+  window.addEventListener('popstate', (e) => {
+    console.log(e);
+    const hrefRegexp = new RegExp(`${window.location.protocol}\/\/${window.location.host}(.*)`, 'g');
+    const [, href] = hrefRegexp.exec(window.location.href);
+    cb({
+      target: { href },
+      preventDefault: () => {},
+    });
+  });
 }
 
 const resolve = (p) => Promise.resolve(p).then(
@@ -76,7 +85,7 @@ function router(opt = {}) {
 
       // TODO: fade between routes
       document.getElementById('slot').replaceWith(slot);
-      attachClickListener(clickListener);
+      attachListener(clickListener);
       call('routeChangeEnd');
     }
   }
@@ -86,7 +95,7 @@ function router(opt = {}) {
     subscribers.set(event, callbacks);
   }
 
-  attachClickListener(clickListener);
+  attachListener(clickListener);
 
   return {
     on,
