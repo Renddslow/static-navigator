@@ -1,4 +1,4 @@
-# Static HTML History Loader
+# Static Navigator
 
 > Framework-free SPA-style page loading for statically generated sites.
 
