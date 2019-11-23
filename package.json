@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "unpkg": "dist/index.umd.js",
-  "repository": "https://github.com/Renddslow/static-html-router",
+  "repository": "https://github.com/Renddslow/static-navigator",
   "author": "Matt McElwee <mubatt@wyopub.com>",
   "license": "SEE LICENSE IN LICENSE.md",
   "devDependencies": {
