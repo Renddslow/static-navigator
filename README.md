@@ -1,5 +1,7 @@
 # Static Navigator
 
+[![install size](https://packagephobia.now.sh/badge?p=static-navigator)](https://packagephobia.now.sh/result?p=static-navigator) ![npm](https://img.shields.io/npm/v/static-navigator)
+
 > Framework-free SPA-style page loading for statically generated sites.
 
 ## Installation
